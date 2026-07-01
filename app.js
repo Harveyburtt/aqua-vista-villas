@@ -317,6 +317,11 @@ window.addEventListener('DOMContentLoaded', () => {
   renderHomeCards();
   renderVillasPage();
 
+  setTimeout(() => {
+    const splash = document.getElementById('splash');
+    if (splash) splash.classList.add('hidden');
+  }, 900);
+
   const hash = window.location.hash.replace('#', '');
   if (hash && VILLAS.find(v => v.id === hash)) {
     navigate('villa-detail', hash);
